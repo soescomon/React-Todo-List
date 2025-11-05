@@ -1,5 +1,7 @@
 import './App.css'
 import ToDoList from './ToDoList'
+import TodoListWrapper from './toDoListWrapper';
+
 const ToDoList1 = [
   {
       id: 1,
@@ -20,9 +22,12 @@ const ToDoList1 = [
 function App() {
    return (
     <>
-      <ToDoList tasksList={ToDoList1}/>
+      <ToDoList skipItem="Finish React homework" tasksList={ToDoList1}/>
+      <ToDoList skipItem="Walk the dog" tasksList={ToDoList1}/>
+
+      <TodoListWrapper tasksList={ToDoList1} />
     </>
   )
 };
 
-export default App
+export default App;

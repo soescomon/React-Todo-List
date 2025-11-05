@@ -1,20 +1,24 @@
-function ToDoList({tasksList}) {   
+function ToDoList({tasksList, skipItem}) {   
   return (
     <>
         <h1>My To Do List</h1>
-        <h2>Using index</h2>
-        <ol>
-            <li>{tasksList[0].task} - {tasksList[0].isCompleted ? "Done" : "To Do!"}</li>
-            <li>{tasksList[1].task} - {tasksList[1].isCompleted ? "Done" : "To Do!"}</li>
-            <li>{tasksList[2].task} - {tasksList[2].isCompleted ? "Done" : "To Do!"}</li>
-        </ol>
-
+        
         <h2>Using .map()</h2>
         <ol>
             {tasksList.map((item) => (
+                item.task === skipItem ? null :
                 <li key={item.id}>{item.task} - {item.isCompleted ? "Done" : "To Do!"}</li>
             ))}
         </ol>
+        <br/>
+        <ol>
+            {tasksList.map((item) => (
+                item.task !== skipItem && 
+                <li key={item.id}>{item.task} - {item.isCompleted ? "Done" : "To Do!"}</li>
+            ))}
+        </ol>
+
+      
     </>
   )
 };
