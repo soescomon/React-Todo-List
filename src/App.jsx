@@ -1,5 +1,6 @@
 import './App.css'
 import ToDoList from './ToDoList'
+import TextInput from './TodoListUseState';
 import TodoListWrapper from './toDoListWrapper';
 
 const ToDoList1 = [
@@ -26,6 +27,7 @@ function App() {
       <ToDoList skipItem="Walk the dog" tasksList={ToDoList1}/>
 
       <TodoListWrapper tasksList={ToDoList1} />
+      <TextInput/>
     </>
   )
 };
